@@ -30,6 +30,24 @@ function LoginContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const supabase = createClient();
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    const isSupabaseConfigured =
+        Boolean(supabaseUrl) &&
+        Boolean(supabaseAnonKey) &&
+        !supabaseUrl!.includes("placeholder") &&
+        !supabaseAnonKey!.includes("placeholder");
+
+    const getFriendlyAuthError = (err: unknown) => {
+        const message = err instanceof Error ? err.message : String(err || "Authentication failed");
+        if (/load failed|failed to fetch|networkerror/i.test(message)) {
+            if (!isSupabaseConfigured) {
+                return "Supabase is not configured. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in frontend/.env.local.";
+            }
+            return "Unable to reach authentication service. Check your internet and Supabase project status.";
+        }
+        return message;
+    };
 
     // Handle URL error params (e.g. from auth callback)
     useEffect(() => {
@@ -46,6 +64,13 @@ function LoginContent() {
         setInfo(null);
 
         try {
+            // In local demo mode, skip auth network call if Supabase env is not configured.
+            if (!isSupabaseConfigured) {
+                router.push("/dashboard");
+                router.refresh();
+                return;
+            }
+
             const { error } = await supabase.auth.signInWithPassword({
                 email,
                 password,
@@ -57,14 +82,15 @@ function LoginContent() {
 
             router.push("/dashboard");
             router.refresh();
-        } catch (err: any) {
-            if (err?.message?.includes("Invalid login credentials") || err?.message?.includes("Email not confirmed")) {
-                if (!process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL.includes("placeholder")) {
+        } catch (err: unknown) {
+            const message = err instanceof Error ? err.message : String(err || "");
+            if (message.includes("Invalid login credentials") || message.includes("Email not confirmed")) {
+                if (!isSupabaseConfigured) {
                     router.push("/dashboard");
                     return;
                 }
             }
-            setError(err?.message || "Authentication failed. Please check your connection.");
+            setError(getFriendlyAuthError(err));
         } finally {
             setLoading(false);
         }
@@ -73,6 +99,10 @@ function LoginContent() {
     const handleForgotPassword = async () => {
         if (!email) {
             setError("Please enter your email address first");
+            return;
+        }
+        if (!isSupabaseConfigured) {
+            setError("Password reset requires Supabase configuration in frontend/.env.local.");
             return;
         }
         setLoading(true);
@@ -92,6 +122,10 @@ function LoginContent() {
     };
 
     const handleOAuth = async (provider: "github" | "google") => {
+        if (!isSupabaseConfigured) {
+            setError("OAuth login requires Supabase configuration in frontend/.env.local.");
+            return;
+        }
         await supabase.auth.signInWithOAuth({
             provider,
             options: {

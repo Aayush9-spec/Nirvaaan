@@ -30,11 +30,22 @@
 
 ## 🛠 Tech Stack
 
-*   **Frontend**: Next.js 14 (App Router), TypeScript, Tailwind CSS.
-*   **AI**: OpenAI API (GPT-4o), Web Speech API.
-*   **Backend / Auth**: Supabase (PostgreSQL, Auth & Row Level Security).
+*   **Frontend**: Next.js 15 (App Router), TypeScript, Tailwind CSS.
+*   **AI**: OpenAI API, Web Speech API.
+*   **Backend / Auth**: Next.js Route Handlers + Supabase (PostgreSQL, Auth, RLS).
 *   **Web3**: Wagmi, Viem, RainbowKit, Ethereum/Polygon (Testnet).
 *   **Deployment**: Vercel (Frontend), Supabase (Database).
+
+---
+
+## 📁 Project Structure
+
+```text
+health-ai/
+├── frontend/   # Next.js web app (UI + app/api route handlers)
+├── backend/    # Reserved for standalone backend services/workers
+└── supabase/   # Supabase project config/migrations
+```
 
 ---
 
@@ -50,16 +61,17 @@
 1.  **Clone the repository**
     ```bash
     git clone https://github.com/yourusername/medai-platform.git
-    cd medai-platform/frontend
+    cd medai-platform
     ```
 
-2.  **Install dependencies**
+2.  **Install frontend dependencies**
     ```bash
+    cd frontend
     npm install
     ```
 
 3.  **Configure Environment**
-    Create a `.env.local` file in the root directory:
+    Create a `.env.local` file in `frontend/`:
     ```bash
     # AI Brain
     OPENAI_API_KEY=sk-your-openai-key
@@ -71,11 +83,18 @@
 
 4.  **Run the Development Server**
     ```bash
+    cd frontend
     npm run dev
     ```
 
 5.  **Open the App**
     Visit [http://localhost:3000](http://localhost:3000) to launch MedAI.
+
+Optional (from repository root):
+```bash
+npm run dev
+```
+Root scripts proxy to `frontend/`.
 
 ---
 

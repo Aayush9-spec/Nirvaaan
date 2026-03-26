@@ -629,7 +629,7 @@ export async function getLabBookings(
     category?: "pathlab" | "radiology"
 ): Promise<LabBooking[]> {
     const supabase = createClient();
-    let query = supabase
+    const query = supabase
         .from("lab_bookings")
         .select("*, lab_test:lab_tests(*)")
         .eq("patient_id", userId)

@@ -36,6 +36,5 @@ export function useRealtimeSubscription(
         return () => {
             supabase.removeChannel(channel);
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [table, filterColumn, filterValue]);
 }
