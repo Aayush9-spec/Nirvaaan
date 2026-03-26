@@ -73,7 +73,7 @@ export async function uploadMedicalDocument(
  * List a user's uploaded medical documents.
  */
 export async function getUserDocuments(userId: string): Promise<
-    { name: string; path: string; size: number; created: string }[]
+    { name: string; path: string; size: number; created: string | null }[]
 > {
     const supabase = createClient();
 
