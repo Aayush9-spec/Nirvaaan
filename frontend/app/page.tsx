@@ -290,7 +290,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050505] text-gray-900 dark:text-white selection:bg-purple-500/30 font-sans">
+    <div className="min-h-screen bg-white dark:bg-[#050505] text-gray-900 dark:text-white selection:bg-blue-500/30 dark:selection:bg-purple-500/30 font-sans">
 
       {/* ─── Background Grid ─── */}
       <div className="fixed inset-0 z-0 pointer-events-none dark:bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
@@ -299,7 +299,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 border-b border-gray-200 dark:border-white/10 bg-white/80 dark:bg-[#050505]/80 backdrop-blur-md">
         <div className="max-w-[1400px] mx-auto px-6 h-20 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 text-white flex items-center justify-center rounded-lg font-bold text-lg">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 dark:from-purple-500 dark:to-purple-700 text-white flex items-center justify-center rounded-lg font-bold text-lg">
               M
             </div>
             <span className="font-bold text-xl tracking-tight">MedAI</span>
@@ -326,7 +326,7 @@ export default function Home() {
             <Link href="/login" className="hidden sm:block text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors px-4 py-2">
               Sign In
             </Link>
-            <Link href="/dashboard" className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-6 py-2.5 text-sm font-semibold rounded-lg transition-all shadow-lg shadow-purple-900/20">
+            <Link href="/dashboard" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-purple-600 dark:to-purple-700 dark:hover:from-purple-700 dark:hover:to-purple-800 text-white px-6 py-2.5 text-sm font-semibold rounded-lg transition-all shadow-lg shadow-blue-900/20 dark:shadow-purple-900/20">
               Launch App
             </Link>
           </div>
@@ -385,7 +385,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <Link href="/dashboard/ai-check" className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-2 shadow-lg shadow-purple-900/30">
+                <Link href="/dashboard/ai-check" className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-purple-600 dark:to-purple-700 dark:hover:from-purple-700 dark:hover:to-purple-800 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-900/30 dark:shadow-purple-900/30">
                   Start Diagnosis <ArrowRight size={18} />
                 </Link>
                 <Link href="/signup" className="px-8 py-4 border border-gray-300 dark:border-white/20 hover:bg-gray-50 dark:hover:bg-white/5 rounded-lg font-medium transition-all flex items-center justify-center">
@@ -798,7 +798,7 @@ export default function Home() {
                 a full medical ecosystem — free to start.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/signup" className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-lg font-medium transition-all shadow-lg shadow-purple-900/30 flex items-center justify-center gap-2">
+                <Link href="/signup" className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-purple-600 dark:to-purple-700 dark:hover:from-purple-700 dark:hover:to-purple-800 text-white rounded-lg font-medium transition-all shadow-lg shadow-blue-900/30 dark:shadow-purple-900/30 flex items-center justify-center gap-2">
                   Create Free Account <ArrowRight size={18} />
                 </Link>
                 <Link href="https://github.com/Aayush9-spec/Health_AI" target="_blank" className="px-8 py-4 border border-gray-300 dark:border-white/20 hover:bg-gray-50 dark:hover:bg-white/5 rounded-lg font-medium transition-all flex items-center justify-center">
@@ -820,7 +820,7 @@ export default function Home() {
             {/* Brand */}
             <div className="md:col-span-1">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 text-white flex items-center justify-center rounded-lg font-bold text-lg">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 dark:from-purple-500 dark:to-purple-700 text-white flex items-center justify-center rounded-lg font-bold text-lg">
                   M
                 </div>
                 <span className="font-bold text-xl">MedAI</span>
