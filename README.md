@@ -1,6 +1,6 @@
-# 🧠 MedAI: Decentralized Medical Intelligence Protocol
+# 🧠 NIRVAAAN: Decentralized Medical Intelligence Protocol
 
-**MedAI** is an AI-powered healthcare platform that bridges the gap between patient care, artificial intelligence, and decentralized finance. It provides real-time symptom analysis, connects patients with doctors, and facilitates secure, transparent payments via blockchain technology.
+**NIRVAAAN** is an AI-powered healthcare platform that bridges the gap between patient care, artificial intelligence, and decentralized finance. It provides real-time symptom analysis, connects patients with doctors, and facilitates secure, transparent payments via blockchain technology.
 
 ![MedAI Dashboard Preview](https://via.placeholder.com/1200x600?text=MedAI+Dashboard+Preview)
 
