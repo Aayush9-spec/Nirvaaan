@@ -141,7 +141,7 @@ export default function AppointmentsPage() {
                     key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_placeholder", 
                     amount: order.amount,
                     currency: order.currency,
-                    name: "MedAI Platform",
+                    name: "NIRVAAAN Platform",
                     description: `Consultation with ${doctor?.name}`,
                     order_id: order.id,
                     handler: async (response: any) => {

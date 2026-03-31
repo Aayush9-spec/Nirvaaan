@@ -18,12 +18,12 @@ export async function POST(req: NextRequest) {
 
     switch (type) {
       case "appointment_confirmation":
-        subject = "Appointment Confirmed - MedAI";
+        subject = "Appointment Confirmed - NIRVAAAN";
         emailHtml = emailTemplates.appointmentConfirmation(data);
         break;
       
       case "prescription_ready":
-        subject = "New Prescription Available - MedAI";
+        subject = "New Prescription Available - NIRVAAAN";
         emailHtml = emailTemplates.prescriptionReady(data);
         break;
       

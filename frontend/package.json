@@ -20,6 +20,7 @@
     "@types/leaflet": "^1.9.21",
     "axios": "^1.13.5",
     "framer-motion": "^12.34.0",
+    "gsap": "^3.14.2",
     "jspdf": "^4.1.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.564.0",

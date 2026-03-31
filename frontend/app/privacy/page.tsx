@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              MedAI ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy
+              NIRVAAAN ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy
               explains how we collect, use, disclose, and safeguard your information when you use our
               healthcare platform.
             </p>
@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl font-semibold mb-4">4. HIPAA Compliance</h2>
             <div className="bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-900/30 rounded-lg p-6">
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                MedAI is committed to compliance with the Health Insurance Portability and Accountability
+                NIRVAAAN is committed to compliance with the Health Insurance Portability and Accountability
                 Act (HIPAA) for protecting your Protected Health Information (PHI).
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
@@ -168,7 +168,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">11. Children's Privacy</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              MedAI is not intended for users under 18 years of age. We do not knowingly collect personal
+              NIRVAAAN is not intended for users under 18 years of age. We do not knowingly collect personal
               information from children. If you believe we have collected data from a minor, please contact us.
             </p>
           </section>
@@ -176,7 +176,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">12. International Users</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              If you access MedAI from outside the United States, your information may be transferred to
+              If you access NIRVAAAN from outside the United States, your information may be transferred to
               and processed in the U.S. By using the platform, you consent to this transfer.
             </p>
           </section>
@@ -195,9 +195,9 @@ export default function PrivacyPolicy() {
               For privacy-related questions or to exercise your rights:
               <br />
               <br />
-              <strong>Email:</strong> privacy@medai.app
+              <strong>Email:</strong> privacy@nirvaaan.app
               <br />
-              <strong>Data Protection Officer:</strong> dpo@medai.app
+              <strong>Data Protection Officer:</strong> dpo@nirvaaan.app
               <br />
               <strong>Address:</strong> [Your Company Address]
             </p>

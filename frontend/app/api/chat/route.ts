@@ -142,7 +142,7 @@ export async function POST(req: Request) {
         }
 
         const systemPrompt = guided
-            ? `You are MedAI. Analyze the patient's symptoms and return ONLY valid JSON:
+            ? `You are NIRVAAAN. Analyze the patient's symptoms and return ONLY valid JSON:
 {
   "risk": "Low | Medium | High | Critical",
   "urgency": "short urgency guidance",
@@ -151,7 +151,7 @@ export async function POST(req: Request) {
   "advice": "2-3 concise care sentences",
   "disclaimer": "short AI disclaimer"
 }`
-            : `You are MedAI, an advanced medical assistant.
+            : `You are NIRVAAAN, an advanced medical assistant.
 - Analyze symptoms and suggest safe next actions.
 - Keep responses concise, empathetic, and medically grounded.
 - Never claim certainty.

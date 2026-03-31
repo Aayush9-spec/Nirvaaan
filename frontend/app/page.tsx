@@ -13,6 +13,7 @@ import {
 import { useEffect, useState, useRef } from "react";
 import CountUp from "react-countup";
 import ThemeToggle from "@/components/ThemeToggle";
+import BorderGlow from "@/components/BorderGlow";
 
 // ─── Data ────────────────────────────────────────────────────────────
 
@@ -151,7 +152,7 @@ const whyChoose = [
 const faqs = [
   {
     q: "How does the AI health assistant work?",
-    a: "MedAI uses OpenAI's GPT-4o model with a specialized medical system prompt. You describe your symptoms via text or voice, and the AI provides analysis, potential diagnoses, urgency detection, and specialist recommendations. It always recommends consulting a professional for serious concerns.",
+    a: "NIRVAAAN uses OpenAI's GPT-4o model with a specialized medical system prompt. You describe your symptoms via text or voice, and the AI provides analysis, potential diagnoses, urgency detection, and specialist recommendations. It always recommends consulting a professional for serious concerns.",
   },
   {
     q: "Is my medical data secure?",
@@ -159,15 +160,15 @@ const faqs = [
   },
   {
     q: "Can I consult doctors online?",
-    a: "Yes! MedAI supports both online video consultations and in-person appointment booking. You can browse verified specialists, check availability, and join calls directly from your dashboard.",
+    a: "Yes! NIRVAAAN supports both online video consultations and in-person appointment booking. You can browse verified specialists, check availability, and join calls directly from your dashboard.",
   },
   {
     q: "What is the Web3 Health Wallet?",
-    a: "The Health Wallet connects your Ethereum wallet (MetaMask, WalletConnect, Coinbase) to MedAI. You can make ETH payments for consultations, store health NFTs representing verified medical records, and view your transaction history.",
+    a: "The Health Wallet connects your Ethereum wallet (MetaMask, WalletConnect, Coinbase) to NIRVAAAN. You can make ETH payments for consultations, store health NFTs representing verified medical records, and view your transaction history.",
   },
   {
     q: "Can I book pathlab tests online?",
-    a: "Yes! MedAI integrates with certified pathlabs across multiple cities. You can book diagnostic tests, schedule home sample collection, and receive your results digitally — all from your dashboard.",
+    a: "Yes! NIRVAAAN integrates with certified pathlabs across multiple cities. You can book diagnostic tests, schedule home sample collection, and receive your results digitally — all from your dashboard.",
   },
   {
     q: "How do I book an appointment?",
@@ -175,11 +176,11 @@ const faqs = [
   },
   {
     q: "Is there a doctor portal?",
-    a: "Yes! MedAI has a dedicated doctor portal where healthcare providers can manage patients, accept/reject appointment requests, write and send digital prescriptions, and track their practice metrics and revenue.",
+    a: "Yes! NIRVAAAN has a dedicated doctor portal where healthcare providers can manage patients, accept/reject appointment requests, write and send digital prescriptions, and track their practice metrics and revenue.",
   },
   {
     q: "What payment options are available?",
-    a: "MedAI supports ETH cryptocurrency payments through our integrated Web3 wallet. Traditional payment methods can be added through the platform. All transactions are recorded on the blockchain for transparency.",
+    a: "NIRVAAAN supports ETH cryptocurrency payments through our integrated Web3 wallet. Traditional payment methods can be added through the platform. All transactions are recorded on the blockchain for transparency.",
   },
 ];
 
@@ -187,7 +188,7 @@ const testimonials = [
   {
     name: "Dr. Sarah Chen",
     role: "General Physician",
-    text: "MedAI's diagnostic engine is remarkably accurate. The AI suggests differentials I can work with, saving significant time during consultations.",
+    text: "NIRVAAAN's diagnostic engine is remarkably accurate. The AI suggests differentials I can work with, saving significant time during consultations.",
     rating: 5,
   },
   {
@@ -302,7 +303,7 @@ export default function Home() {
             <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 dark:from-purple-500 dark:to-purple-700 text-white flex items-center justify-center rounded-lg font-bold text-lg">
               M
             </div>
-            <span className="font-bold text-xl tracking-tight">MedAI</span>
+            <span className="font-bold text-xl tracking-tight">NIRVAAAN</span>
           </div>
 
           <div className="hidden md:flex items-center gap-1 text-sm font-medium text-gray-500 dark:text-gray-400">
@@ -441,7 +442,7 @@ export default function Home() {
                   </div>
                   <div className="flex-1 ml-4">
                     <div className="bg-gray-200 dark:bg-white/10 rounded-md px-3 py-1 text-xs text-gray-400 font-mono max-w-xs">
-                      medai.app/dashboard
+                      nirvaaan.app/dashboard
                     </div>
                   </div>
                 </div>
@@ -583,25 +584,35 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className={`group relative p-6 rounded-2xl border ${service.border} bg-gradient-to-br ${service.color} dark:backdrop-blur-sm overflow-hidden hover:border-gray-400 dark:hover:border-white/20 transition-all duration-300 cursor-pointer h-full`}
+                  className="h-full"
                 >
-                  {/* Mouse glow */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{
-                      background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(139, 92, 246, 0.06), transparent 40%)`,
-                    }}
-                  />
+                  <BorderGlow
+                    className="w-full h-full rounded-2xl text-left overflow-hidden transition-all duration-300 cursor-pointer"
+                    backgroundColor="transparent"
+                    glowColor="270 80 60"
+                    borderRadius={16}
+                    edgeSensitivity={30}
+                  >
+                    <div className={`group relative p-6 w-full h-full bg-gradient-to-br ${service.color} dark:backdrop-blur-sm`}>
+                      {/* Mouse glow */}
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                        style={{
+                          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(139, 92, 246, 0.06), transparent 40%)`,
+                        }}
+                      />
 
-                  <div className={`w-12 h-12 rounded-xl bg-white/10 dark:bg-white/5 flex items-center justify-center mb-4 ${service.iconColor} group-hover:scale-110 transition-transform`}>
-                    {service.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{service.desc}</p>
+                      <div className={`w-12 h-12 rounded-xl bg-white/10 dark:bg-white/5 flex items-center justify-center mb-4 ${service.iconColor} group-hover:scale-110 transition-transform`}>
+                        {service.icon}
+                      </div>
+                      <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{service.desc}</p>
 
-                  <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-                    <ArrowRight className="text-gray-400 dark:text-white/40" size={18} />
-                  </div>
+                      <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
+                        <ArrowRight className="text-gray-400 dark:text-white/40" size={18} />
+                      </div>
+                    </div>
+                  </BorderGlow>
                 </motion.div>
               </Link>
             ))}
@@ -638,21 +649,29 @@ export default function Home() {
                     <div className="hidden md:block absolute top-16 left-[calc(100%+1rem)] w-[calc(100%-2rem)] h-px bg-gradient-to-r from-gray-300 dark:from-white/10 to-transparent -translate-x-8" />
                   )}
 
-                  <div className="p-8 bg-gray-50 dark:bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-2xl hover:border-purple-500/30 dark:hover:border-purple-500/30 hover:shadow-lg hover:shadow-purple-500/5 transition-all relative overflow-hidden cursor-pointer h-full">
-                    <div className="absolute top-4 right-4 text-6xl font-black text-gray-100 dark:text-white/[0.03] leading-none select-none">
-                      {step.step}
-                    </div>
-                    <div className={`w-14 h-14 rounded-2xl ${step.bg} flex items-center justify-center mb-6 ${step.color} group-hover:scale-110 transition-transform`}>
-                      {step.icon}
-                    </div>
-                    <div className="text-xs font-mono text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">Step {step.step}</div>
-                    <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+                  <BorderGlow
+                    className="w-full h-full rounded-2xl transition-all relative overflow-hidden cursor-pointer"
+                    backgroundColor="transparent"
+                    glowColor="270 80 60"
+                    borderRadius={16}
+                    edgeSensitivity={30}
+                  >
+                    <div className="p-8 bg-gray-50 dark:bg-white/[0.02] w-full h-full">
+                      <div className="absolute top-4 right-4 text-6xl font-black text-gray-100 dark:text-white/[0.03] leading-none select-none">
+                        {step.step}
+                      </div>
+                      <div className={`w-14 h-14 rounded-2xl ${step.bg} flex items-center justify-center mb-6 ${step.color} group-hover:scale-110 transition-transform`}>
+                        {step.icon}
+                      </div>
+                      <div className="text-xs font-mono text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">Step {step.step}</div>
+                      <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{step.desc}</p>
 
-                    <div className="mt-4 flex items-center gap-1.5 text-sm font-medium text-purple-500 dark:text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                      Try it now <ArrowRight size={14} />
+                      <div className="mt-4 flex items-center gap-1.5 text-sm font-medium text-purple-500 dark:text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                        Try it now <ArrowRight size={14} />
+                      </div>
                     </div>
-                  </div>
+                  </BorderGlow>
                 </motion.div>
               </Link>
             ))}
@@ -660,7 +679,7 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════
-                    SECTION 5 — WHY CHOOSE MEDAI
+                    SECTION 5 — WHY CHOOSE NIRVAAAN
                 ═══════════════════════════════════════════════════════ */}
         <section className="py-24 px-6 max-w-[1400px] mx-auto">
           <motion.div
@@ -669,7 +688,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-500 dark:text-purple-400 mb-4 block">03 / Why MedAI</span>
+            <span className="text-xs font-mono uppercase tracking-widest text-purple-500 dark:text-purple-400 mb-4 block">03 / Why NIRVAAAN</span>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Built Different</h2>
             <p className="text-gray-500 max-w-lg mx-auto">Not just another health app. A decentralized intelligence layer for the future of medicine.</p>
           </motion.div>
@@ -682,15 +701,24 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex gap-5 p-6 bg-gray-50 dark:bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-2xl hover:border-gray-300 dark:hover:border-white/20 transition-all group"
+                className="h-full"
               >
-                <div className={`w-12 h-12 rounded-xl bg-white dark:bg-white/5 shadow-sm dark:shadow-none flex items-center justify-center flex-shrink-0 ${item.color} group-hover:scale-110 transition-transform`}>
-                  {item.icon}
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{item.desc}</p>
-                </div>
+                <BorderGlow
+                  className="w-full h-full rounded-2xl transition-all group"
+                  backgroundColor="transparent"
+                  glowColor="270 80 60"
+                  borderRadius={16}
+                >
+                  <div className="flex gap-5 p-6 bg-gray-50 dark:bg-white/[0.02] w-full h-full">
+                    <div className={`w-12 h-12 rounded-xl bg-white dark:bg-white/5 shadow-sm dark:shadow-none flex items-center justify-center flex-shrink-0 ${item.color} group-hover:scale-110 transition-transform`}>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                </BorderGlow>
               </motion.div>
             ))}
           </div>
@@ -708,7 +736,7 @@ export default function Home() {
           >
             <span className="text-xs font-mono uppercase tracking-widest text-purple-500 dark:text-purple-400 mb-4 block">04 / Testimonials</span>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Trusted by Professionals</h2>
-            <p className="text-gray-500 max-w-lg mx-auto">What doctors and patients say about MedAI.</p>
+            <p className="text-gray-500 max-w-lg mx-auto">What doctors and patients say about NIRVAAAN.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -719,23 +747,34 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-6 bg-gray-50 dark:bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-2xl hover:border-gray-300 dark:hover:border-white/20 transition-all"
+                className="h-full"
               >
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} size={14} className="text-yellow-500 fill-yellow-500" />
-                  ))}
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-5">&ldquo;{t.text}&rdquo;</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/30 to-blue-500/30 flex items-center justify-center text-sm font-bold text-purple-600 dark:text-purple-300">
-                    {t.name.split(" ").map(n => n[0]).join("")}
+                <BorderGlow
+                  className="w-full h-full rounded-2xl transition-all"
+                  backgroundColor="transparent"
+                  glowColor="270 80 60"
+                  borderRadius={16}
+                >
+                  <div className="p-6 bg-gray-50 dark:bg-white/[0.02] w-full h-full flex flex-col justify-between">
+                    <div>
+                      <div className="flex gap-1 mb-4">
+                        {Array.from({ length: t.rating }).map((_, j) => (
+                          <Star key={j} size={14} className="text-yellow-500 fill-yellow-500" />
+                        ))}
+                      </div>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-5">&ldquo;{t.text}&rdquo;</p>
+                    </div>
+                    <div className="flex items-center gap-3 mt-auto">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/30 to-blue-500/30 flex items-center justify-center text-sm font-bold text-purple-600 dark:text-purple-300">
+                        {t.name.split(" ").map(n => n[0]).join("")}
+                      </div>
+                      <div>
+                        <div className="font-medium text-sm">{t.name}</div>
+                        <div className="text-xs text-gray-400 dark:text-gray-500">{t.role}</div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="font-medium text-sm">{t.name}</div>
-                    <div className="text-xs text-gray-400 dark:text-gray-500">{t.role}</div>
-                  </div>
-                </div>
+                </BorderGlow>
               </motion.div>
             ))}
           </div>
@@ -788,7 +827,14 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-purple-900/10 to-blue-600/10 rounded-3xl" />
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[80px] pointer-events-none" />
 
-            <div className="relative p-12 md:p-16 text-center rounded-3xl border border-purple-500/20">
+            <BorderGlow
+              className="relative p-12 md:p-16 text-center rounded-3xl w-full"
+              backgroundColor="transparent"
+              glowColor="270 80 60"
+              animated={true}
+              borderRadius={24}
+              coneSpread={15}
+            >
               <h2 className="text-3xl md:text-5xl font-bold mb-4">
                 Start Your Health <br />
                 <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Journey Today</span>
@@ -797,7 +843,7 @@ export default function Home() {
                 Join the decentralized healthcare revolution. AI diagnostics, Web3 wallet, and
                 a full medical ecosystem — free to start.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
                 <Link href="/signup" className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-purple-600 dark:to-purple-700 dark:hover:from-purple-700 dark:hover:to-purple-800 text-white rounded-lg font-medium transition-all shadow-lg shadow-blue-900/30 dark:shadow-purple-900/30 flex items-center justify-center gap-2">
                   Create Free Account <ArrowRight size={18} />
                 </Link>
@@ -805,7 +851,7 @@ export default function Home() {
                   View on GitHub
                 </Link>
               </div>
-            </div>
+            </BorderGlow>
           </motion.div>
         </section>
 
@@ -823,7 +869,7 @@ export default function Home() {
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 dark:from-purple-500 dark:to-purple-700 text-white flex items-center justify-center rounded-lg font-bold text-lg">
                   M
                 </div>
-                <span className="font-bold text-xl">MedAI</span>
+                <span className="font-bold text-xl">NIRVAAAN</span>
               </div>
               <p className="text-gray-500 text-sm leading-relaxed">
                 Decentralized health intelligence platform powered by AI and blockchain.
@@ -861,8 +907,8 @@ export default function Home() {
                 <a href="tel:+916394882033" className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
                   <Phone size={14} /> +91 6394 882 033
                 </a>
-                <a href="mailto:support@medai.health" className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
-                  <Mail size={14} /> support@medai.health
+                <a href="mailto:support@nirvaaan.health" className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  <Mail size={14} /> support@nirvaaan.health
                 </a>
                 <span className="flex items-center gap-2 text-sm text-gray-500">
                   <MapPin size={14} /> New Delhi, India
@@ -895,7 +941,7 @@ export default function Home() {
 
           <div className="border-t border-gray-200 dark:border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-gray-400 dark:text-gray-600">
-              © 2026 MedAI Protocol. All rights reserved.
+              © 2026 NIRVAAAN Protocol. All rights reserved.
             </div>
             <div className="flex gap-6 text-sm text-gray-400 dark:text-gray-600">
               <Link href="/privacy" className="hover:text-gray-600 dark:hover:text-gray-400 transition-colors">Privacy Policy</Link>

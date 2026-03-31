@@ -129,7 +129,7 @@ export default function SignupPage() {
                     </p>
                     <p className="text-purple-400 font-medium mb-6">{email}</p>
                     <p className="text-gray-500 text-xs mb-8">
-                        Click the link in your email to verify your account and start using MedAI.
+                        Click the link in your email to verify your account and start using NIRVAAAN.
                         The link will expire in 24 hours.
                     </p>
 
@@ -180,7 +180,7 @@ export default function SignupPage() {
                     <div className="flex justify-center mb-6">
                         <div className="flex items-center gap-3">
                             <Activity className="text-purple-500" size={32} />
-                            <span className="font-bold text-2xl text-white">MedAI</span>
+                            <span className="font-bold text-2xl text-white">NIRVAAAN</span>
                         </div>
                     </div>
 
@@ -327,7 +327,7 @@ export default function SignupPage() {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     className="w-full bg-black/40 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/50 transition-colors"
-                                    placeholder="doctor@medai.protocol"
+                                    placeholder="doctor@nirvaaan.protocol"
                                 />
                             </div>
                         </motion.div>

@@ -93,7 +93,7 @@ export default function DashboardSidebar() {
             {/* Sidebar */}
             <AnimatePresence mode="wait">
                 <motion.div
-                    className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#080808] border-r border-white/10 transform transition-transform duration-300 ease-in-out md:translate-x-0 ${isOpen ? "translate-x-0" : "-translate-x-full"
+                    className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#080808]/50 backdrop-blur-xl border-r border-white/10 transform transition-transform duration-300 ease-in-out md:translate-x-0 ${isOpen ? "translate-x-0" : "-translate-x-full"
                         }`}
                 >
                     <div className="flex flex-col h-full">
@@ -102,7 +102,7 @@ export default function DashboardSidebar() {
                             <div className="w-8 h-8 bg-purple-600 rounded-sm flex items-center justify-center mr-3 font-bold text-white">
                                 M
                             </div>
-                            <span className="font-bold text-xl text-white tracking-tight">MedAI</span>
+                            <span className="font-bold text-xl text-white tracking-tight">NIRVAAAN</span>
                         </Link>
 
                         {/* Navigation */}

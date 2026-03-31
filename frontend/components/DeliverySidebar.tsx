@@ -58,7 +58,7 @@ export default function DeliverySidebar() {
                             <div className="w-8 h-8 rounded-lg bg-orange-600 flex items-center justify-center text-white shadow-lg shadow-orange-500/20">
                                 <Truck size={18} />
                             </div>
-                            <span className="font-bold text-lg tracking-tight">MedAI <span className="text-orange-500 text-xs uppercase ml-1">Delivery</span></span>
+                            <span className="font-bold text-lg tracking-tight">NIRVAAAN <span className="text-orange-500 text-xs uppercase ml-1">Delivery</span></span>
                         </Link>
 
                         {/* Navigation */}

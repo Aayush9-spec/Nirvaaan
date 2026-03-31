@@ -55,18 +55,18 @@ export const smsTemplates = {
     date: string;
     time: string;
   }) =>
-    `Hi ${data.patientName}, reminder: Your appointment with ${data.doctorName} is scheduled for ${data.date} at ${data.time}. - MedAI`,
+    `Hi ${data.patientName}, reminder: Your appointment with ${data.doctorName} is scheduled for ${data.date} at ${data.time}. - NIRVAAAN`,
 
   appointmentConfirmation: (data: {
     doctorName: string;
     date: string;
     time: string;
   }) =>
-    `Your appointment with ${data.doctorName} on ${data.date} at ${data.time} has been confirmed. - MedAI`,
+    `Your appointment with ${data.doctorName} on ${data.date} at ${data.time} has been confirmed. - NIRVAAAN`,
 
   prescriptionReady: (data: { prescriptionNumber: string }) =>
-    `Your prescription #${data.prescriptionNumber} is ready. View it in your MedAI dashboard. - MedAI`,
+    `Your prescription #${data.prescriptionNumber} is ready. View it in your NIRVAAAN dashboard. - NIRVAAAN`,
 
   appointmentCancelled: (data: { doctorName: string; date: string }) =>
-    `Your appointment with ${data.doctorName} on ${data.date} has been cancelled. Please reschedule. - MedAI`,
+    `Your appointment with ${data.doctorName} on ${data.date} has been cancelled. Please reschedule. - NIRVAAAN`,
 };

@@ -45,7 +45,7 @@ export default function ForgotPasswordPage() {
                     <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 text-white flex items-center justify-center rounded-lg font-bold text-lg">
                         M
                     </div>
-                    <span className="font-bold text-xl tracking-tight">MedAI</span>
+                    <span className="font-bold text-xl tracking-tight">NIRVAAAN</span>
                 </div>
 
                 {sent ? (

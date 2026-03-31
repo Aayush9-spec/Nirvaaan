@@ -16,7 +16,7 @@ export default function DashboardHome() {
     const [messages, setMessages] = useState([
         {
             role: "ai",
-            content: "Hello. I am MedAI, your decentralized health assistant. How are you feeling today? Describe your symptoms.",
+            content: "Hello. I am NIRVAAAN, your decentralized health assistant. How are you feeling today? Describe your symptoms.",
         },
     ]);
     const [input, setInput] = useState("");

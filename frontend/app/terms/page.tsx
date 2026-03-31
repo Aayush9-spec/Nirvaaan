@@ -21,7 +21,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              By accessing or using MedAI ("the Platform"), you agree to be bound by these Terms of Service.
+              By accessing or using NIRVAAAN ("the Platform"), you agree to be bound by these Terms of Service.
               If you do not agree to these terms, please do not use the Platform.
             </p>
           </section>
@@ -33,7 +33,7 @@ export default function TermsOfService() {
                 IMPORTANT: NOT A SUBSTITUTE FOR PROFESSIONAL MEDICAL ADVICE
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                <li>MedAI's AI-powered diagnostic tool is for informational purposes only</li>
+                <li>NIRVAAAN's AI-powered diagnostic tool is for informational purposes only</li>
                 <li>It does NOT replace professional medical diagnosis, treatment, or advice</li>
                 <li>Always consult a qualified healthcare provider for medical concerns</li>
                 <li>In case of emergency, call your local emergency services immediately</li>
@@ -52,14 +52,14 @@ export default function TermsOfService() {
               <li>Maintain the confidentiality of your account credentials</li>
               <li>Use the Platform only for lawful purposes</li>
               <li>Not misuse or attempt to hack the Platform</li>
-              <li>Respect the intellectual property rights of MedAI</li>
+              <li>Respect the intellectual property rights of NIRVAAAN</li>
             </ul>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-4">4. Healthcare Provider Services</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              MedAI connects patients with licensed healthcare providers. The Platform is not responsible
+              NIRVAAAN connects patients with licensed healthcare providers. The Platform is not responsible
               for the quality of care provided by individual practitioners. All medical consultations are
               between you and the healthcare provider directly.
             </p>
@@ -92,7 +92,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">7. Limitation of Liability</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              TO THE MAXIMUM EXTENT PERMITTED BY LAW, MEDAI SHALL NOT BE LIABLE FOR ANY INDIRECT,
+              TO THE MAXIMUM EXTENT PERMITTED BY LAW, NIRVAAAN SHALL NOT BE LIABLE FOR ANY INDIRECT,
               INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO
               LOSS OF PROFITS, DATA, OR HEALTH OUTCOMES ARISING FROM YOUR USE OF THE PLATFORM.
             </p>
@@ -101,7 +101,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">8. Intellectual Property</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              All content, features, and functionality on the Platform are owned by MedAI and are
+              All content, features, and functionality on the Platform are owned by NIRVAAAN and are
               protected by international copyright, trademark, and other intellectual property laws.
             </p>
           </section>
@@ -126,7 +126,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-semibold mb-4">11. Governing Law</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
               These Terms shall be governed by and construed in accordance with the laws of the
-              jurisdiction in which MedAI operates, without regard to conflict of law principles.
+              jurisdiction in which NIRVAAAN operates, without regard to conflict of law principles.
             </p>
           </section>
 
@@ -135,7 +135,7 @@ export default function TermsOfService() {
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
               For questions about these Terms, please contact us at:
               <br />
-              Email: legal@medai.app
+              Email: legal@nirvaaan.app
               <br />
               Address: [Your Company Address]
             </p>

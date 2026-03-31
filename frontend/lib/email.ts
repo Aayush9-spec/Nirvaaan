@@ -8,7 +8,7 @@ export interface EmailOptions {
 }
 
 export async function sendEmail(options: EmailOptions) {
-  const { to, subject, html, from = "MedAI <noreply@medai.app>" } = options;
+  const { to, subject, html, from = "NIRVAAAN <noreply@nirvaaan.app>" } = options;
 
   try {
     if (!process.env.RESEND_API_KEY) {
@@ -89,8 +89,8 @@ export const emailTemplates = {
             <p style="margin-top: 20px;">If you need to reschedule or cancel, please visit your dashboard.</p>
           </div>
           <div class="footer">
-            <p>© 2026 MedAI. All rights reserved.</p>
-            <p><a href="https://medai.app/terms">Terms</a> | <a href="https://medai.app/privacy">Privacy</a></p>
+            <p>© 2026 NIRVAAAN. All rights reserved.</p>
+            <p><a href="https://nirvaaan.app/terms">Terms</a> | <a href="https://nirvaaan.app/privacy">Privacy</a></p>
           </div>
         </div>
       </body>
@@ -123,11 +123,11 @@ export const emailTemplates = {
             <p>Dear ${data.patientName},</p>
             <p>Dr. ${data.doctorName} has sent you a new prescription.</p>
             <p><strong>Prescription Number:</strong> ${data.prescriptionNumber}</p>
-            <a href="https://medai.app/dashboard/records" class="button">View Prescription</a>
+            <a href="https://nirvaaan.app/dashboard/records" class="button">View Prescription</a>
             <p style="margin-top: 20px;">You can order medicines directly from your dashboard.</p>
           </div>
           <div class="footer">
-            <p>© 2026 MedAI. All rights reserved.</p>
+            <p>© 2026 NIRVAAAN. All rights reserved.</p>
           </div>
         </div>
       </body>

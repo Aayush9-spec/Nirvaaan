@@ -14,7 +14,7 @@ import { Providers } from "./Providers";
 // });
 
 export const metadata: Metadata = {
-  title: "MedAI Platform",
+  title: "NIRVAAAN Platform",
   description: "AI + Blockchain Powered Healthcare Infrastructure",
 };
 

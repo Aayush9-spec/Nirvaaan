@@ -59,7 +59,7 @@ export default function HospitalSidebar() {
                             <div className="w-8 h-8 rounded-lg bg-cyan-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
                                 <Building2 size={18} />
                             </div>
-                            <span className="font-bold text-lg tracking-tight">MedAI <span className="text-cyan-500 text-xs uppercase ml-1">Hospital</span></span>
+                            <span className="font-bold text-lg tracking-tight">NIRVAAAN <span className="text-cyan-500 text-xs uppercase ml-1">Hospital</span></span>
                         </Link>
 
                         {/* Navigation */}

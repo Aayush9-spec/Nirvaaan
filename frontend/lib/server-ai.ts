@@ -45,7 +45,7 @@ function getClient(provider: Provider): OpenAI | null {
             baseURL: process.env.OPENROUTER_BASE_URL || "https://openrouter.ai/api/v1",
             defaultHeaders: {
                 "HTTP-Referer": process.env.NEXT_PUBLIC_APP_URL || "https://health-ai-murex-zeta.vercel.app",
-                "X-Title": "MedAI Platform",
+                "X-Title": "NIRVAAAN Platform",
             },
         });
     }

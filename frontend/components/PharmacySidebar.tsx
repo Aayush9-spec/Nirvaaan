@@ -58,7 +58,7 @@ export default function PharmacySidebar() {
                             <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
                                 <Pill size={18} />
                             </div>
-                            <span className="font-bold text-lg tracking-tight">MedAI <span className="text-emerald-500 text-xs uppercase ml-1">Pharmacy</span></span>
+                            <span className="font-bold text-lg tracking-tight">NIRVAAAN <span className="text-emerald-500 text-xs uppercase ml-1">Pharmacy</span></span>
                         </Link>
 
                         {/* Navigation */}

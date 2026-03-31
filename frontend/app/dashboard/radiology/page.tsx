@@ -216,7 +216,7 @@ export default function RadiologyPage() {
                                         className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500/50"
                                     >
                                         <option value="Radiology Center">Radiology Center — Main</option>
-                                        <option value="MedAI Imaging Hub">MedAI Imaging Hub</option>
+                                        <option value="NIRVAAAN Imaging Hub">NIRVAAAN Imaging Hub</option>
                                         <option value="City Scan Center">City Scan Center</option>
                                     </select>
                                 </div>

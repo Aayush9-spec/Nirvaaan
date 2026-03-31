@@ -22,10 +22,10 @@ export default function MedicalDisclaimer() {
 
         <div className="bg-red-50 dark:bg-red-900/10 border-2 border-red-500 rounded-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-red-800 dark:text-red-400 mb-4">
-            CRITICAL: READ BEFORE USING MEDAI
+            CRITICAL: READ BEFORE USING NIRVAAAN
           </h2>
           <p className="text-red-700 dark:text-red-300 text-lg leading-relaxed">
-            MedAI's AI-powered diagnostic tool is NOT a substitute for professional medical advice,
+            NIRVAAAN's AI-powered diagnostic tool is NOT a substitute for professional medical advice,
             diagnosis, or treatment. Always seek the advice of your physician or other qualified health
             provider with any questions you may have regarding a medical condition.
           </p>
@@ -35,7 +35,7 @@ export default function MedicalDisclaimer() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">1. No Doctor-Patient Relationship</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Use of MedAI's AI diagnostic tool does NOT create a doctor-patient relationship. The AI
+              Use of NIRVAAAN's AI diagnostic tool does NOT create a doctor-patient relationship. The AI
               provides general health information based on symptoms you describe, but it cannot replace
               a licensed healthcare professional's examination and judgment.
             </p>
@@ -56,7 +56,7 @@ export default function MedicalDisclaimer() {
             <h2 className="text-2xl font-semibold mb-4">3. Emergency Situations</h2>
             <div className="bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-500 rounded-lg p-6">
               <p className="text-yellow-800 dark:text-yellow-400 font-semibold mb-3">
-                DO NOT USE MEDAI FOR EMERGENCIES
+                DO NOT USE NIRVAAAN FOR EMERGENCIES
               </p>
               <p className="text-gray-700 dark:text-gray-300 mb-3">
                 If you are experiencing a medical emergency, call your local emergency number immediately:
@@ -86,7 +86,7 @@ export default function MedicalDisclaimer() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">5. No Guarantee of Accuracy</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              While MedAI uses advanced AI technology (GPT-4o), we make no warranties about the accuracy,
+              While NIRVAAAN uses advanced AI technology (GPT-4o), we make no warranties about the accuracy,
               completeness, or reliability of any health information provided. Medical knowledge evolves
               constantly, and AI models may not reflect the latest research.
             </p>
@@ -104,7 +104,7 @@ export default function MedicalDisclaimer() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">7. Third-Party Healthcare Providers</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              MedAI connects you with independent healthcare providers. We do not employ these providers
+              NIRVAAAN connects you with independent healthcare providers. We do not employ these providers
               and are not responsible for their professional conduct, diagnoses, or treatment decisions.
               Any medical advice you receive from providers through our platform is their professional
               opinion, not ours.
@@ -114,9 +114,9 @@ export default function MedicalDisclaimer() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">8. Liability Disclaimer</h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              MedAI and its affiliates shall not be liable for any damages arising from your use of the
+              NIRVAAAN and its affiliates shall not be liable for any damages arising from your use of the
               AI diagnostic tool or any health decisions made based on information provided by the platform.
-              You use MedAI at your own risk.
+              You use NIRVAAAN at your own risk.
             </p>
           </section>
 
@@ -125,7 +125,7 @@ export default function MedicalDisclaimer() {
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
               By using Med
 AI, you acknowledge that you have read, understood, and agree to this Medical
-              Disclaimer. You understand that MedAI is a tool to assist in health awareness and provider
+              Disclaimer. You understand that NIRVAAAN is a tool to assist in health awareness and provider
               connection, not a replacement for professional medical care.
             </p>
           </section>
@@ -135,7 +135,7 @@ AI, you acknowledge that you have read, understood, and agree to this Medical
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
               For questions about this disclaimer:
               <br />
-              Email: medical@medai.app
+              Email: medical@nirvaaan.app
             </p>
           </section>
         </div>

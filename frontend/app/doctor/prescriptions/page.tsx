@@ -119,7 +119,7 @@ export default function PrescriptionsPage() {
                             doc.setTextColor(255, 255, 255);
                             doc.setFontSize(20);
                             doc.setFont("helvetica", "bold");
-                            doc.text("MedAI Prescription", 14, 22);
+                            doc.text("NIRVAAAN Prescription", 14, 22);
                             doc.setFontSize(10);
                             doc.setFont("helvetica", "normal");
                             doc.text(prescriptionNumber, w - 14, 22, { align: "right" });
@@ -178,7 +178,7 @@ export default function PrescriptionsPage() {
                             doc.line(14, pageH - 30, w - 14, pageH - 30);
                             doc.setFontSize(9);
                             doc.setTextColor(128);
-                            doc.text("Digitally signed via MedAI Platform", 14, pageH - 22);
+                            doc.text("Digitally signed via NIRVAAAN Platform", 14, pageH - 22);
                             doc.text("This prescription is digitally generated and verified.", 14, pageH - 16);
 
                             doc.save(`prescription-${prescriptionNumber}.pdf`);

@@ -161,7 +161,7 @@ function LoginContent() {
                     <div className="flex justify-center mb-6">
                         <div className="flex items-center gap-3">
                             <Activity className="text-purple-500" size={32} />
-                            <span className="font-bold text-2xl text-white">MedAI</span>
+                            <span className="font-bold text-2xl text-white">NIRVAAAN</span>
                         </div>
                     </div>
 
@@ -218,7 +218,7 @@ function LoginContent() {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     className="w-full bg-black/40 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/50 transition-colors"
-                                    placeholder="doctor@medai.protocol"
+                                    placeholder="doctor@nirvaaan.protocol"
                                 />
                             </div>
                         </motion.div>

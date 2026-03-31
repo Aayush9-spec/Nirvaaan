@@ -105,7 +105,7 @@ export async function processAgentRequest(userText: string): Promise<{ result?: 
             messages: [
                 {
                     role: "system",
-                    content: `You are MedAI voice triage assistant.
+                    content: `You are NIRVAAAN voice triage assistant.
 Return ONLY valid JSON:
 {
   "reply": "empathetic clinical guidance in 1-3 sentences",

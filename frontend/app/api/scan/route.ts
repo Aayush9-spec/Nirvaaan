@@ -25,7 +25,7 @@ export async function POST(req: Request) {
             messages: [
                 {
                     role: "system",
-                    content: `You are MedAI Medicine Scanner.
+                    content: `You are NIRVAAAN Medicine Scanner.
 Analyze medicine image content and provide:
 1) Medicine name
 2) Active ingredients
