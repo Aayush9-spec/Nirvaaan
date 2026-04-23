@@ -10,7 +10,7 @@
    *   **Real-time Diagnosis**: Uses **OpenAI GPT-4o** to analyze symptoms and provide preliminary medical advice with disclaimers.
    *   **Voice Interface**: Natural language voice commands for hands-free interaction.
    *   **Actionable Insights**: Automatically detects intent (e.g., "Book appointment") and triggers relevant UI flows.
- 
+  
 ### 2. **Doctor-Patient Marketplace** 
    *   **Patient Dashboard**: Manage appointments, view prescriptions, and track medical history.
    *   **Provider Portal**: Dedicated interface for doctors to manage patients, join video calls, and digitally sign prescriptions.
