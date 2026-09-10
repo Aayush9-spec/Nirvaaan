@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
     Pill, 
     Plus, 
@@ -43,7 +43,6 @@ export default function PharmacyInventory() {
         setLoading(true);
         try {
             const supabase = createClient();
-            // In a real app, we'd filter by the current user's pharmacy_id
             const { data, error } = await supabase
                 .from('pharmacy_inventory')
                 .select('*')
@@ -61,7 +60,6 @@ export default function PharmacyInventory() {
     async function handleSave() {
         try {
             const supabase = createClient();
-            // Get pharmacy_id for the current user
             const { data: phData } = await supabase
                 .from('pharmacy_details')
                 .select('id')
@@ -140,7 +138,6 @@ export default function PharmacyInventory() {
                 </button>
             </div>
 
-            {/* Add/Edit Modal */}
             <AnimatePresence>
                 {(isAdding || editingId) && (
                     <motion.div 
@@ -226,7 +223,6 @@ export default function PharmacyInventory() {
                 )}
             </AnimatePresence>
 
-            {/* Search & Filters */}
             <div className="relative w-full max-w-md">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
                 <input 
@@ -238,7 +234,6 @@ export default function PharmacyInventory() {
                 />
             </div>
 
-            {/* Inventory Table */}
             <div className="bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm">
                 <table className="w-full text-left text-sm">
                     <thead className="bg-white/5 text-gray-400 uppercase text-[10px] font-bold tracking-wider">
