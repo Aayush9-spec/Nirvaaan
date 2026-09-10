@@ -1,21 +1,24 @@
 import { NextResponse } from "next/server";
 import { getAiRuntime } from "@/lib/server-ai";
+import { z } from "zod";
+import { apiError } from "@/lib/api-utils";
+
+const ScanSchema = z.object({
+    image: z.string().url(),
+});
 
 export async function POST(req: Request) {
     try {
-        const { image } = await req.json();
+        const body = await req.json();
+        const validation = ScanSchema.safeParse(body);
+        if (!validation.success) return apiError("Invalid image URL", 400, validation.error.format());
 
-        if (!image) {
-            return NextResponse.json({ error: "No image provided" }, { status: 400 });
-        }
-
+        const { image } = validation.data;
         const runtime = getAiRuntime("vision");
 
         if (!runtime) {
-            await new Promise((resolve) => setTimeout(resolve, 1200));
             return NextResponse.json({
-                result:
-                    "### 💊 Medicine Scan Preview\n\n- Unable to run live scan because no vision-capable AI provider is configured.\n- Add `OPENROUTER_API_KEY` (recommended) or `OPENAI_API_KEY` to enable real medicine analysis.\n\n⚠️ This is an AI analysis. Always verify with a licensed pharmacist.",
+                result: "### 💊 Medicine Scan Preview\n\n- No vision AI configured.\n- Add `OPENROUTER_API_KEY` to enable real analysis.\n\n⚠️ This is an AI analysis. Always verify with a licensed pharmacist.",
             });
         }
 
@@ -25,46 +28,21 @@ export async function POST(req: Request) {
             messages: [
                 {
                     role: "system",
-                    content: `You are NIRVAAAN Medicine Scanner.
-Analyze medicine image content and provide:
-1) Medicine name
-2) Active ingredients
-3) Category
-4) Common uses
-5) Dosage guidance (if visible)
-6) Expiry/batch details (if visible)
-7) Warnings
-8) Authenticity cues
-If image is not medicine, clearly say so.
-End with: "⚠️ This is an AI analysis. Always verify with a licensed pharmacist."`,
+                    content: "You are NIRVAAAN Medicine Scanner. Analyze medicine image: name, ingredients, category, uses, dosage, expiry, warnings. End with disclaimer.",
                 },
                 {
                     role: "user",
                     content: [
-                        {
-                            type: "text",
-                            text: "Analyze this medicine image. Identify medicine details and safety notes.",
-                        },
-                        {
-                            type: "image_url",
-                            image_url: {
-                                url: image,
-                                detail: "high",
-                            },
-                        },
+                        { type: "text", text: "Analyze this medicine image." },
+                        { type: "image_url", image_url: { url: image, detail: "high" } },
                     ],
                 },
             ],
         });
 
-        const result = completion.choices[0]?.message?.content || "Unable to analyze the image.";
+        const result = completion.choices[0]?.message?.content || "Unable to analyze image.";
         return NextResponse.json({ result, provider: runtime.provider });
-    } catch (error: unknown) {
-        console.error("Scan API Error:", error);
-        return NextResponse.json(
-            { error: "Failed to analyze medicine image" },
-            { status: 500 }
-        );
+    } catch (error: any) {
+        return apiError(error.message || "Failed to analyze image", 500);
     }
 }
-

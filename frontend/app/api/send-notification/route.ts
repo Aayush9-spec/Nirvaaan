@@ -1,52 +1,46 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/server";
 import { sendEmail, emailTemplates } from "@/lib/email";
+import { z } from "zod";
+import { apiError } from "@/lib/api-utils";
+
+const NotifSchema = z.object({
+    type: z.enum(["appointment_confirmation", "prescription_ready"]),
+    data: z.object({
+        email: z.string().email(),
+        patientName: z.string().optional(),
+        doctorName: z.string().optional(),
+        date: z.string().optional(),
+        time: z.string().optional(),
+    }),
+});
 
 export async function POST(req: NextRequest) {
-  try {
-    const supabase = await createClient();
-    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    try {
+        const supabase = await createClient();
+        const { data: { user }, error: authError } = await supabase.auth.getUser();
+        if (authError || !user) return apiError("Unauthorized", 401);
 
-    if (authError || !user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        const body = await req.json();
+        const validation = NotifSchema.safeParse(body);
+        if (!validation.success) return apiError("Invalid notification data", 400, validation.error.format());
+
+        const { type, data } = validation.data;
+        let emailHtml = "";
+        let subject = "";
+
+        if (type === "appointment_confirmation") {
+            subject = "Appointment Confirmed - NIRVAAAN";
+            emailHtml = emailTemplates.appointmentConfirmation(data);
+        } else if (type === "prescription_ready") {
+            subject = "New Prescription Available - NIRVAAAN";
+            emailHtml = emailTemplates.prescriptionReady(data);
+        }
+
+        const result = await sendEmail({ to: data.email, subject, html: emailHtml });
+        if (result.success) return NextResponse.json({ success: true, message: "Notification sent" });
+        return apiError(result.error || "Email failed", 500);
+    } catch (error: any) {
+        return apiError(error.message || "Internal error", 500);
     }
-
-    const { type, data } = await req.json();
-
-    let emailHtml = "";
-    let subject = "";
-
-    switch (type) {
-      case "appointment_confirmation":
-        subject = "Appointment Confirmed - NIRVAAAN";
-        emailHtml = emailTemplates.appointmentConfirmation(data);
-        break;
-      
-      case "prescription_ready":
-        subject = "New Prescription Available - NIRVAAAN";
-        emailHtml = emailTemplates.prescriptionReady(data);
-        break;
-      
-      default:
-        return NextResponse.json({ error: "Invalid notification type" }, { status: 400 });
-    }
-
-    const result = await sendEmail({
-      to: data.email,
-      subject,
-      html: emailHtml,
-    });
-
-    if (result.success) {
-      return NextResponse.json({ success: true, message: "Notification sent" });
-    } else {
-      return NextResponse.json({ error: result.error }, { status: 500 });
-    }
-  } catch (error: any) {
-    console.error("Notification error:", error);
-    return NextResponse.json(
-      { error: error.message || "Failed to send notification" },
-      { status: 500 }
-    );
-  }
 }

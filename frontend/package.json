@@ -35,7 +35,8 @@
     "react-leaflet": "^5.0.0",
     "three": "^0.182.0",
     "viem": "^2.45.3",
-    "wagmi": "^2.19.5"
+    "wagmi": "^2.19.5",
+    "zod": "^4.6.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
