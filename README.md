@@ -7,7 +7,7 @@
 
 **NIRVAAAN** is a high-performance, AI-powered healthcare platform designed to bridge the gap between patient care, artificial intelligence, and decentralized finance. By integrating real-time symptom analysis with a Web3 payment layer, NIRVAAAN creates a secure, transparent, and efficient medical intelligence ecosystem.
 
-🔗 **Live Demo:** [https://health-ai-murex-zeta.vercel.app/](https://health-ai-murex-zeta.vercel.app/)
+🔗 **Live Demo:** [https://health-ai-murex-zeta.vercel.app/](https://health-ai-murex-zeta.vercel.app/) 
 
 ---
 
