@@ -11,7 +11,7 @@
 
 ---
 
-## 🚀 Key Features
+## 🚀 Key Features 
  
 ### 1. 🧠 AI Health Assistant (The Neural Engine)
 - **Real-time Diagnosis:** Powered by **GPT-4o** to analyze complex symptoms and provide preliminary medical intelligence with strict safety disclaimers.
